@@ -4,12 +4,18 @@
   font-size: 18px;
   line-height: 23.4px;
   background-color: var(--page-background-color, #000028);
-  
+  background-image: var(
+    --page-background-image,
+    url("../images/cover-image.png")
+  );
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .cover {
   display: grid;
   padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  min-block-size: 100vh;
+  min-height: max(100vh, 668px);
 }
 .decorated-zone {
   position: relative;
@@ -40,9 +46,10 @@
 }
 .link {
   text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
 .link:hover {
-  text-decoration: underline;
+  border-block-end-color: currentColor;     
 }
 .link:focus {
   outline: 0;
@@ -122,14 +129,6 @@
 }
 .header {
   align-items: start;
-  background-image: var(
-    --page-background-image,
-    url("../images/cover-image.png")
-  );
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
 }
 .header__theme-menu {
   justify-self: end;
